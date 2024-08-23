@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Login from "../Auth/Login";
 import Signup from "../Auth/Signup";
 
@@ -7,6 +8,8 @@ const Navbar = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
   const [isSignupOTPOpen, setIsSignupOTPOpen] = useState(false);
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,6 +34,10 @@ const Navbar = () => {
     setIsSignupOTPOpen(true);
   };
 
+  const handleGetStartedClick = () => {
+    navigate('/read'); // Redirect to /read
+  };
+
   return (
     <nav className="bg-gradient-to-r bg-primaryBg text-primaryText py-4 px-8 flex items-center justify-between">
       <div className="flex items-center space-x-3">
@@ -49,7 +56,7 @@ const Navbar = () => {
         </button>
         <button
           className="bg-primary text-primaryBg py-2 px-4 rounded hover:bg-secondary transition duration-300"
-          onClick={() => openSheet("signup")}
+          onClick={handleGetStartedClick} // Handle redirection here
         >
           Get Started for free
         </button>
@@ -58,7 +65,7 @@ const Navbar = () => {
       <div className="flex md:hidden space-x-4">
         <button
           className="bg-yellow-500 text-primaryBg py-2 px-4 rounded hover:bg-yellow-600 transition duration-300"
-          onClick={() => openSheet("signup")}
+          onClick={handleGetStartedClick} // Handle redirection here
         >
           Get Started
         </button>
@@ -136,8 +143,6 @@ const Navbar = () => {
           <Signup onClose={closeAllSheets} openSignupOTP={openSignupOTP} />
         </div>
       )}
-
-      
     </nav>
   );
 };
