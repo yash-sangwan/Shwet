@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   const handleGetStartedClick = () => {
-    navigate('/read'); // Redirect to /read
+    navigate('/read/home'); // Redirect to /read
   };
 
   return (
@@ -122,10 +122,7 @@ const Navbar = () => {
           </button>
           <button
             className="bg-yellow-500 text-primaryBg py-2 px-4 rounded hover:bg-yellow-600 transition duration-300"
-            onClick={() => {
-              openSheet("signup");
-              toggleMenu();
-            }}
+            onClick={handleGetStartedClick}
           >
             Get Started for free
           </button>

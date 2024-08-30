@@ -6,6 +6,7 @@ import profile2 from './profile2.png'
 import createPost from './createPost.png'
 import uploadPost from './uploadPost.png'
 import verifyPost from './verifyPost.png'
+import HeaderGroupBg from './Header-groups-bg.png'
 
 
 
@@ -17,7 +18,8 @@ const assets = {
     uploadPost,
     createPost,
     profile2,
-    verifyPost
+    verifyPost,
+    HeaderGroupBg
 }
 
 
