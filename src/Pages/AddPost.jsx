@@ -67,17 +67,7 @@ const AddPost = () => {
   
       alert("Post published successfully!");
   
-      // Skip updating lastPostId for now to isolate the issue
-      // Comment out the following code to test
-      // await program.methods
-      //   .updateLastPostId(new Uint8Array([lastPostId + 1])) 
-      //   .accounts({
-      //     userAccount: userPda,
-      //     authority: publicKey,
-      //     systemProgram: SystemProgram.programId,
-      //   })
-      //   .rpc();
-  
+
       handleMoveToTrash();
     } catch (error) {
       console.error("Error publishing post:", error);
@@ -121,8 +111,18 @@ const AddPost = () => {
   const handleContentInput = () => {
     const text = editorRef.current.innerText || "";
     const words = text.trim().split(/\s+/);
-    setWordCount(words.filter((word) => word !== "").length);
+    const wordCount = words.filter((word) => word !== "").length;
+  
+    if (wordCount > 45) {
+      // Truncate text to 45 words
+      const truncatedText = words.slice(0, 45).join(" ");
+      editorRef.current.innerText = truncatedText;
+      setWordCount(45); // Update word count to 45
+    } else {
+      setWordCount(wordCount);
+    }
   };
+  
 
   const handleMoveToTrash = () => {
     document.querySelector('input[placeholder="Enter title here"]').value = "";

@@ -37,8 +37,9 @@ const FAQ = () => {
       answer: "Head over to 'Get Started' button, signup/login if you haven't already, connect your wallet and you are good to go!"
     },
     {
-      question: "How much does it cost to hire developers?",
-      answer: "Dedicated developers ensure focused and consistent progress on your project.",
+      question: "What is the difference between a traditional media network and Shwet?",
+      answer: "Shwet's zktls technology based proof of authentication lets the user take rights of their own data, claim or anything they want to bring to the public without the fear of being duplicated, stolen, copyrighted or modified in any manner. In addition to this, in a traditional media a reader never know if the piece of information they are consuming is actually legit or not, or from where they are orignally coming from. They need to trust a centralized entity based on their reputation that their claim can never be wrong. But who is taking the responsibility? That's where Shwet came into place!",
+
     },
     {
       question: "How much does it cost to hire developers?",

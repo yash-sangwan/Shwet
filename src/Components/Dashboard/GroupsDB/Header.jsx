@@ -17,13 +17,13 @@ const Header = () => {
             <h1 className="text-2xl font-bold">Welcome to Groups!</h1>
             <p className="text-lg">Follow Groups to explore your interests on Shwet.</p>
             <div className="space-x-4">
-              <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">
+              <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded hover:cursor-not-allowed">
                 <span className="flex items-center">
                   <i className="fa-solid fa-circle-plus mr-2"></i>
                   Create a Space
                 </span>
               </button>
-              <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">
+              <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded hover:cursor-not-allowed">
                 <span className="flex items-center">
                   <i className="fa-regular fa-compass mr-2"></i>
                   Discover Spaces

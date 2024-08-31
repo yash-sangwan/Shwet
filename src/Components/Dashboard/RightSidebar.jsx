@@ -6,11 +6,11 @@ const RightSidebar = () => {
     <div className="fixed pt-24 right-0 top-0 h-screen w-72 bg-gray-900 text-white p-4 space-y-6">
       {/* Subscribe Section */}
       <div className="bg-gray-800 p-4 rounded-lg">
-        <h2 className="text-lg font-bold mb-2">Subscribe to Premium</h2>
+        <h2 className="text-lg font-bold mb-2 " >Subscribe to Premium</h2>
         <p className="text-sm mb-4">
           Subscribe to unlock new features and if eligible, receive a share of ads revenue.
         </p>
-        <button className="bg-primary text-black py-2 px-4 rounded-full w-full hover:bg-secondary">
+        <button className="bg-primary text-black py-2 px-4 rounded-full w-full hover:bg-secondary hover:cursor-not-allowed  ">
           Subscribe
         </button>
       </div>
@@ -43,7 +43,7 @@ const RightSidebar = () => {
           </div>
         ))}
 
-        <button className="text-blue-500 text-sm hover:underline">
+        <button className="text-blue-500 text-sm hover:underline hover:cursor-not-allowed">
           Show more
         </button>
       </div>

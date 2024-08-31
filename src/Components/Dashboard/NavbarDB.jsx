@@ -322,7 +322,7 @@ const NavbarDB = () => {
           </button>
         ) : connected && !isConnecting ? (
           <>
-            <button className="bg-gray-700 text-white px-4 py-1 rounded-full hover:bg-gray-600">
+            <button className="bg-gray-700 text-white px-4 py-1 rounded-full hover:bg-gray-600 hover:cursor-not-allowed">
               Try Shwet+
             </button>
 

@@ -13,6 +13,8 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import '@solana/wallet-adapter-react-ui/styles.css';
+import { BlogProvider } from "./Components/extra/BlogContext";
+import RequestProof from "./Components/Dashboard/WritePost/RequestProof";
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
@@ -24,19 +26,22 @@ function App() {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
+                <BlogProvider> 
           <Router>
             <div className="App">
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home />} /> 
                 <Route path="/read/home" element={<HomeDB />} />
                 <Route path="/read/home/:postId" element={<PostDetail />} />
                 <Route path="/read/following" element={<FollowingDB />} />
                 <Route path="/read/groups" element={<GroupsDB />} />
                 <Route path="/read/notifications" element={<NotificationDB />} />
                 <Route path="/addpost" element={<AddPost />} />
+                <Route path="/request-proof" element={<RequestProof />} />☻
               </Routes>
             </div>
           </Router>
+                </BlogProvider>
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
