@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# Shwet - Truth chain for a safe, trustless, zk-proof based media network and knowledge base
+>>>>>>> 979e82a42df137ecf24a699c23e89ee3b5c575c8
 
 # Shwet
 
