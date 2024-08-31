@@ -29,15 +29,15 @@ const FAQ = () => {
 
   const faqData = [
     {
-      question: "How do I hire dedicated developers or team?",
-      answer: "You can hire developers through our hiring platform or contact our sales team.",
+      question: "What is exactly a Truth Chain?",
+      answer: "A Truth Chain is concept introduced by Reclaim Protocol and implemented by Shwet. It is a blockchain based network of data containing facts, figures, news, media, claims, etc. by different people, organization and famous personalities around the world with an attested proof of authentication which cannot be modified or unclaimed at anytime or by anyone including the autor and Shwet itself.",
     },
     {
-      question: "What our developers can do for you?",
-      answer: "Our developers can build, scale, and maintain your software solutions.",
+      question: "How can I get started with submitting my own data?",
+      answer: "Head over to 'Get Started' button, signup/login if you haven't already, connect your wallet and you are good to go!"
     },
     {
-      question: "Why hire dedicated developers?",
+      question: "How much does it cost to hire developers?",
       answer: "Dedicated developers ensure focused and consistent progress on your project.",
     },
     {
@@ -51,8 +51,8 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-full h-full p-8 bg-primaryBg">
-      <h2 className="text-3xl font-bold text-center text-white mb-6">FAQ</h2>
+    <div id="faqs-section" className="w-full h-full p-8 bg-primaryBg">
+      <h2 className="text-3xl font-bold text-center text-white mb-6">FAQs</h2>
       <p className="text-center text-gray-400 mb-8 max-w-3xl mx-auto">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.

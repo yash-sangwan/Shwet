@@ -4,7 +4,7 @@ import { faLock, faWallet } from '@fortawesome/free-solid-svg-icons';
 
 const SecurityAndTransaction = () => {
   return (
-    <div className="bg-primaryBg py-8 text-white flex flex-col space-y-8 px-4 md:pl-28 md:pr-28">
+    <div id="explore-section" className="bg-primaryBg py-8 text-white flex flex-col space-y-8 px-4 md:pl-28 md:pr-28">
       
       {/* Encrypted Security */}
       <div className="flex flex-col md:flex-row items-center justify-between">

@@ -6,11 +6,10 @@ const SubscribeSection = () => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 className="text-4xl font-bold text-white mb-4 font-museo">
-            Subscribe and Get Updates Every Week.
+          Stay in the loop.
           </h2>
           <p className="text-gray-400">
-            We have a blog related to NFT so we can share thoughts and routines
-            on our blog which is updated weekly.
+          Subscribe to stay in touch with Shwet to get our latest updates, product announcements, etc, right to your inbox.
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-4">

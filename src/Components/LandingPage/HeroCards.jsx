@@ -76,10 +76,10 @@ const HeroCards = () => {
     {
       image: `${assets.profile1}`,
       name: "New Age Truth Chain!",
-      price: "by Reclaim Protocol",
+      price: "by Shwet",
       likes: 684,
       timeLeft: "10m",
-      bids: 792,
+      bids: "1.6k",
       animation: {
         translateX: 80, // Move diagonally right-down
         translateY: -40, // Move diagonally right-down
@@ -89,10 +89,10 @@ const HeroCards = () => {
     {
       image: `${assets.profile2}`,
       name: "Web3 at it boom",
-      price: "by Shwet ",
+      price: "by John Doe ",
       likes: "1.3k",
       timeLeft: "1h",
-      bids: "1.6k",
+      bids: "754",
       animation: {
         translateX: -30, // Move diagonally left-up
         translateY: 50, // Move diagonally left-up

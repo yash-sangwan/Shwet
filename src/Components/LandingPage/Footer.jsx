@@ -61,11 +61,10 @@ const Footer = () => {
         </div>
 
         <div className="mt-6 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-          <p className="text-sm text-gray-400">&copy; 2022 Shwet New Age Truth Chain </p>
+          <p className="text-sm text-gray-400">&copy; 2024 Shwet All Rights Reserved</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-white hover:text-yellow-500"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="text-white hover:text-yellow-500"><i className="fab fa-whatsapp"></i></a>
-            <a href="#" className="text-white hover:text-yellow-500"><i className="fab fa-instagram"></i></a>
+            <a href="#" className="text-white hover:text-yellow-500"><i className="fab fa-github"></i></a>
+            <a href="#" className="text-white hover:text-yellow-500"><i className="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>

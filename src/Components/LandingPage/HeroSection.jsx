@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="bg-primaryBg text-primaryText px-4 lg:px-24 flex flex-col lg:flex-row justify-between min-h-screen">
       <div className="max-w-lg py-16 md:py-32">
         <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 font-museo">
-          Discover and Collect The Best NFTs Digital Art.
+          Revolutionize Truth with zkTLS
         </h1>
         <img
           src={assets.vector1}
@@ -15,14 +15,29 @@ const HeroSection = () => {
           alt="Vector Decoration"
         />
         <p className="mb-6 text-base md:text-lg">
-          There are a thousand more NFTs that interest you, find and collect what you like!
+          Why even trust the Internet? After all, Shwet is here to spill the
+          beans
         </p>
         <div className="flex gap-2 md:gap-4">
-          <button className="bg-primary text-primaryBg py-2 px-4 md:px-6 rounded font-semibold">
+          <button
+            className="bg-primary text-primaryBg py-2 px-4 md:px-6 rounded font-semibold"
+            onClick={() =>
+              document
+                .getElementById("explore-section")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
             Explore
           </button>
-          <button className="text-primaryText py-2 px-4 md:px-6 border border-white rounded font-semibold">
-            Go to market
+
+          <button className="text-primaryText py-2 px-4 md:px-6 border border-white rounded font-semibold" 
+           onClick={() =>
+            document
+              .getElementById("faqs-section")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+          >
+            FAQs
           </button>
         </div>
       </div>
