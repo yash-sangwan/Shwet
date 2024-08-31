@@ -1,8 +1,15 @@
-# Shwet
+# Shwet - Verifiable truth-chain built on Solana
 
 ## Overview
 
 **Shwet** is a blockchain-based network inspired by the concept of the **Truth Chain** introduced by Reclaim Protocol. The platform allows users to store and share data such as facts, figures, news, media, and claims from various sources, including individuals, organizations, and public figures. Each piece of information is accompanied by an attested proof of authentication that ensures its integrity. Once recorded, the data cannot be modified or retracted by anyone, including the author or Shwet itself.
+
+### Shwet's Landing Page
+![Landing Page Screenshot 1](/src/assets/readme1.png)
+
+
+> The screenshot provide a glimpse of Shwet's intuitive and user-friendly interface.
+
 
 ## Features
 
@@ -14,14 +21,6 @@
 - **Proof of Authentication**: All data entries are securely verified and stored on the blockchain, ensuring credibility.
 - **Global Accessibility**: The platform is accessible to individuals, organizations, and public figures worldwide, promoting a decentralized flow of verified information.
 
-## Screenshots
-
-### Landing Page
-![Landing Page Screenshot 1](/src/assets/readme1.png)
-
-
-> The screenshot provide a glimpse of Shwet's intuitive and user-friendly interface.
-
 ## Getting Started
 
 ### Prerequisites
@@ -30,7 +29,7 @@ Ensure you have the following installed on your machine:
 
 - Node.js v20.15.0 or higher
 - npm or yarn
-- Solana CLI
+- Phantom Wallet - Chrome Extension
 
 ### Installation
 
@@ -52,25 +51,13 @@ Ensure you have the following installed on your machine:
 
 4. Open your browser and visit `http://localhost:3000` to view the application.
 
-### Deployment
-
-To deploy the application, follow the steps below:
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Deploy to your hosting service of choice.
-
-
+## Deployed Version
+Shwet will be going live on the internet very soon, keep an eye on our github to get the live URL to access Shwet as soon as it launches.
 
 ## Contact
 
-For any inquiries, feel free to reach out to the project maintainer:
+For any inquiries, feel free to reach out to the project maintainers:
 
-- **Name**: Yash Sangwan
-- **Email**: yashsangwan00@gmail.com
+- Yash Sangwan - yashsangwan00@gmail.com
 
-- **Name**: Aditi Bindal
-- **Email**: aditii.b6@gmail.com
+- Aditi Bindal - aditii.b6@gmail.com
