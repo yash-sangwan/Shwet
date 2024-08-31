@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-# Shwet - Truth chain for a safe, trustless, zk-proof based media network and knowledge base
->>>>>>> 979e82a42df137ecf24a699c23e89ee3b5c575c8
-
 # Shwet
 
 ## Overview
@@ -69,13 +64,13 @@ To deploy the application, follow the steps below:
 2. Deploy to your hosting service of choice.
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
 For any inquiries, feel free to reach out to the project maintainer:
 
 - **Name**: Yash Sangwan
-- **Email**: yashsangwan@example.com
+- **Email**: yashsangwan00@gmail.com
+
+- **Name**: Aditi Bindal
+- **Email**: aditii.b6@gmail.com
