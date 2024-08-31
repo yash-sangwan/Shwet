@@ -1,4 +1,4 @@
-# React + Vite
+# Shwet - Truth chain for a safe, trustless, zk-proof based media network and knowledge base
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
