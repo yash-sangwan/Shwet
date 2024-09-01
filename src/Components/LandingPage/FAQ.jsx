@@ -42,9 +42,10 @@ const FAQ = () => {
 
     },
     {
-      question: "How much does it cost to hire developers?",
-      answer: "The cost depends on the developers' expertise and the project requirements.",
+      question: "How do I authenticate the content I upload?",
+      answer: "You can authenticate your content by providing proof through your ID card or GitHub account, ensuring the credibility and security of your post.",
     },
+    
   ];
 
   const handleToggle = (index) => {
@@ -54,10 +55,10 @@ const FAQ = () => {
   return (
     <div id="faqs-section" className="w-full h-full p-8 bg-primaryBg">
       <h2 className="text-3xl font-bold text-center text-white mb-6">FAQs</h2>
-      <p className="text-center text-gray-400 mb-8 max-w-3xl mx-auto">
+      {/* <p className="text-center text-gray-400 mb-8 max-w-3xl mx-auto">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-      </p>
+      </p> */}
       <div className="max-w-3xl mx-auto">
         {faqData.map((item, index) => (
           <FAQItem

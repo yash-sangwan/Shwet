@@ -53,11 +53,12 @@ const Footer = () => {
           </div>
 
           <div className="text-center md:text-left max-w-2xl mx-auto">
-            <p className="text-yellow-500 font-semibold mb-2">Digital Assets Are High Risk Assets</p>
-            <p className="text-gray-400 text-sm">
-              Purchasing and investing in Digital Assets is a high-risk activity which incurs risks that are not inherent in managing traditional financial instruments and other assets. The value of digital assets, other digital assets, or fiat currencies is not indicative of future performance.
-            </p>
-          </div>
+  <p className="text-yellow-500 font-semibold mb-2">Shwet - Verifiable Truth-Chain on Solana</p>
+  <p className="text-gray-400 text-sm">
+    Shwet allows you to securely store and share data with proof of authentication, ensuring the integrity of facts, news, and media. While Shwet enhances data security, remember that digital assets carry high risks and their value is not indicative of future performance.
+  </p>
+</div>
+
         </div>
 
         <div className="mt-6 flex flex-col md:flex-row items-center justify-between text-center md:text-left">

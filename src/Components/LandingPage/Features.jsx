@@ -25,9 +25,9 @@ const Features = () => {
         <p className="text-lg mb-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend tellus risus nibh molestie lorem pellentesque est quam in.
         </p>
-        <button className="bg-primary text-black font-bold py-3 px-6 rounded-full">
+        {/* <button className="bg-primary text-black font-bold py-3 px-6 rounded-full">
           Explore Now
-        </button>
+        </button> */}
       </div>
     </div>
   );

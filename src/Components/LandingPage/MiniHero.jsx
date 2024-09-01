@@ -14,7 +14,7 @@ const SecurityAndTransaction = () => {
             <h3 className="text-2xl font-bold font-museo">Encrypted Security</h3>
           </div>
           <p className="text-secondaryText text-sm w-72">
-            Our platform has a strict security system that is safe from name theft.
+          Shwet's ZKTLS secures data ownership, preventing duplication, theft, or alteration.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ const SecurityAndTransaction = () => {
             <h3 className=" font-museo text-2xl font-bold">Fast Transaction</h3>
           </div>
           <p className="text-secondaryText text-sm w-72">
-            We have an easy, fast, and certainly not complicated purchase transaction flow.
+          Leveraging Solana’s high throughput, transactions on Shwet are processed quickly, making data storage and retrieval efficient.
           </p>
         </div>
       </div>
