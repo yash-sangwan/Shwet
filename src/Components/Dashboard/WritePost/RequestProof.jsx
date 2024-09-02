@@ -22,8 +22,8 @@ const RequestProof = () => {
       );
 
       if (response.ok) {
-        const data = response.json();
-        console.log(data);
+        const data = await response.json();
+        // console.log(data);
 
         const requestUrl = data.requestUrl;
       }

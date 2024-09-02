@@ -37,7 +37,7 @@ function App() {
                 <Route path="/read/groups" element={<GroupsDB />} />
                 <Route path="/read/notifications" element={<NotificationDB />} />
                 <Route path="/addpost" element={<AddPost />} />
-                <Route path="/request-proof" element={<RequestProof />} />☻
+                <Route path="/request-proof" element={<RequestProof />} />
               </Routes>
             </div>
           </Router>

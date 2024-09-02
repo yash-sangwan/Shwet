@@ -1,25 +1,27 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PiLegoSmiley } from 'react-icons/pi';
 
 const Post = ({ post }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isCommentsVisible, setIsCommentsVisible] = useState(false);
-  const [likesCount, setLikesCount] = useState(0); // Hardcoded for simplicity
+  const [likesCount, setLikesCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
-  const [comments, setComments] = useState([]); // Hardcoded for simplicity
+  const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const textareaRef = useRef(null);
   const navigate = useNavigate();
 
-  // Ensure post is not undefined and has required properties
   if (!post || !post.content) {
     return <div>No post data available.</div>;
   }
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
-  const navigateToDetail = () => navigate(`/read/home/${post.title.toLowerCase()}`);
-  const toggleComments = () => setIsCommentsVisible(!isCommentsVisible);
+  const navigateToDetail = () =>{
+   console.log(post.title);
+   
+    navigate(`/read/home/${post.title.toLowerCase()}`);
+  }
+     const toggleComments = () => setIsCommentsVisible(!isCommentsVisible);
 
   const handleLike = () => {
     setLikesCount(isLiked ? likesCount - 1 : likesCount + 1);
@@ -39,7 +41,7 @@ const Post = ({ post }) => {
     if (newComment.trim()) {
       const newCommentData = {
         id: comments.length + 1,
-        userProfileImage: post.userProfileImage, // Example user data
+        userProfileImage: post.userProfileImage,
         userName: 'Current User',
         date: new Date().toLocaleString(),
         content: newComment,

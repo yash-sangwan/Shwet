@@ -6,6 +6,9 @@ import { getProgram } from "../Utils/anchorClient";
 import { findProgramAddressSync } from "@project-serum/anchor/dist/cjs/utils/pubkey";
 import { utf8 } from "@project-serum/anchor/dist/cjs/utils";
 import { Buffer } from "buffer";
+import { useNavigate } from "react-router-dom";
+import Notification from "../Components/Notification";
+
 
 const AddPost = () => {
   const editorRef = useRef(null);
@@ -17,43 +20,53 @@ const AddPost = () => {
 
   const { connected, publicKey, wallet } = useWallet();
 
+  const navigate = useNavigate();
+
   const handlePublish = async () => {
     if (!connected || !publicKey) {
       alert("Please connect your wallet first.");
       return;
     }
-  
+
     const program = getProgram(wallet.adapter);
-    const title = document.querySelector('input[placeholder="Enter title here"]').value;
+    const title = document.querySelector(
+      'input[placeholder="Enter title here"]'
+    ).value;
     const content = editorRef.current?.innerHTML || "";
-    const media = selectedImage || ""; 
-    const source = document.querySelector('input[placeholder="URL / Description"]').value;
+    const media = selectedImage || "";
+    const source = document.querySelector(
+      'input[placeholder="URL / Description"]'
+    ).value;
     const proof = "abcdefghijkl";
-  
+
     if (!title || !content || !source || !proof) {
       alert("All fields are required.");
       return;
     }
-  
+
     try {
       setTransactionPending(true);
-  
+
       // Derive userAccount PDA
       const [userPda] = findProgramAddressSync(
         [Buffer.from("user"), publicKey.toBuffer()],
         program.programId
       );
-  
+
       // Fetch user account to get lastPostId
       const user = await program.account.user.fetch(userPda);
       const lastPostId = user.lastPostId;
-  
+
       // Derive postAccount PDA using lastPostId
       const [postPda] = findProgramAddressSync(
-        [Buffer.from("post"), publicKey.toBuffer(), new Uint8Array([lastPostId])],
+        [
+          Buffer.from("post"),
+          publicKey.toBuffer(),
+          new Uint8Array([lastPostId]),
+        ],
         program.programId
       );
-  
+
       // Submit the transaction to create the post on the blockchain
       await program.methods
         .createPost(title, media, content, source, proof)
@@ -64,11 +77,11 @@ const AddPost = () => {
           systemProgram: SystemProgram.programId,
         })
         .rpc();
-  
+
       alert("Post published successfully!");
-  
 
       handleMoveToTrash();
+      navigate("/read/home");
     } catch (error) {
       console.error("Error publishing post:", error);
       alert("Failed to publish post. See console for details.");
@@ -76,8 +89,6 @@ const AddPost = () => {
       setTransactionPending(false);
     }
   };
-  
-
 
   const formatText = (command, value = null) => {
     document.execCommand(command, false, value);
@@ -112,7 +123,7 @@ const AddPost = () => {
     const text = editorRef.current.innerText || "";
     const words = text.trim().split(/\s+/);
     const wordCount = words.filter((word) => word !== "").length;
-  
+
     if (wordCount > 45) {
       // Truncate text to 45 words
       const truncatedText = words.slice(0, 45).join(" ");
@@ -122,7 +133,6 @@ const AddPost = () => {
       setWordCount(wordCount);
     }
   };
-  
 
   const handleMoveToTrash = () => {
     document.querySelector('input[placeholder="Enter title here"]').value = "";
@@ -133,6 +143,7 @@ const AddPost = () => {
   const handlePreviewClick = () => {
     setIsPreviewOpen(true);
   };
+  
 
   const handleClosePreview = () => {
     setIsPreviewOpen(false);
@@ -247,8 +258,7 @@ const AddPost = () => {
             Preview
           </button>
           <div className="text-gray-500 text-sm mb-2">
-            Status:{" "}
-            <span className="text-green-600 font-semibold">Draft</span>
+            Status: <span className="text-green-600 font-semibold">Draft</span>
           </div>
           <div className="text-gray-500 text-sm mb-2">
             Visibility:{" "}
@@ -284,10 +294,13 @@ const AddPost = () => {
 
       {isPreviewOpen && (
         <PostPreviewModal
+          isOpen={isPreviewOpen}
           onClose={handleClosePreview}
-          title={document.querySelector('input[placeholder="Enter title here"]')?.value}
+          title={
+            document.querySelector('input[placeholder="Enter title here"]')
+              ?.value
+          }
           content={editorRef.current?.innerHTML}
-          source={document.querySelector('input[placeholder="URL / Description"]')?.value}
         />
       )}
     </div>

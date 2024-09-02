@@ -26,10 +26,11 @@ const NavbarDB = () => {
   const [isConnecting, setIsConnecting] = useState(false);
   const [isWalletLoading, setIsWalletLoading] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // State to manage login
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to manage login 
   const [showLogin, setShowLogin] = useState(false); // State to show login component
   const [walletAction, setWalletAction] = useState(""); // State to track wallet action
   const [isUserInitialized, setIsUserInitialized] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
@@ -39,6 +40,17 @@ const NavbarDB = () => {
     navigate("/addpost");
   };
 
+  // Useffect for login
+  useEffect(()=>{
+    if(!(localStorage.getItem('jwtToken'))){
+      setIsLoggedIn(false);
+    }else{
+      setIsLoggedIn(true)
+    }
+      }, [localStorage.getItem('jwtToken')])
+    
+
+  // useffect for wallet
   useEffect(() => {
     setIsWalletLoading(false);
   }, [connected]);
@@ -50,6 +62,7 @@ const NavbarDB = () => {
       }
     };
 
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -58,12 +71,45 @@ const NavbarDB = () => {
 
   const handleLogin = () => {
     setShowLogin(true); // Show login component when login button is clicked
+  }; 
+
+  const handleLoginSuccess = async() => {
+    try {
+      
+      setIsLoading(true);
+      if(localStorage.getItem('jwtToken')){
+  
+        setShowLogin(false); // Hide login component after successful login
+        showNotification("Login successful!", "success");
+        navigate('/read/home'); // Navigate to the desired route after login
+        setIsLoggedIn(true);
+      }
+    } catch (error) {
+      showNotification(error.message);
+    }finally{
+      setIsLoading(false);
+    }
+  };
+  
+  // Logout 
+  const handleLogout = async() => {
+    try {
+      setIsLoading(true);
+      localStorage.removeItem('jwtToken'); // Clear the JWT token
+      await handleDisconnect();
+      setIsLoggedIn(false); // Update isLoggedIn state to false
+      showNotification("Logout successful!", "success");
+      navigate('/read/home'); // Redirect to the login page after logout
+      
+    } catch (error) {
+      showNotification(error.message);
+    }finally{
+      setIsLoading(false);
+    }
   };
 
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true); // Set logged in state to true on successful login
-    setShowLogin(false); // Hide login component after login
-  };
+
+
 
   useEffect(() => {
     if (
@@ -85,10 +131,13 @@ const NavbarDB = () => {
 
   const handleConnect = async () => {
     try {
-      setIsConnecting(true);
-      setWalletAction("connect"); // Set action to connect
-      console.log("Connecting...");
+      const token = localStorage.getItem("jwtToken")
+      if(token){
 
+        setIsConnecting(true);
+        setWalletAction("connect"); // Set action to connect
+        console.log("Connecting...");
+        
       if (wallets.length > 0) {
         const wallet = wallets[0]; // Select the first wallet for now
         console.log("Selected wallet:", wallet.adapter.name);
@@ -114,7 +163,7 @@ const NavbarDB = () => {
           }
 
           console.log("Connected:", connected);
-
+          
           // Initialize user account after wallet is connected
           await initializeUserAccount(); // This function will ensure the user account is created if it doesn't exist
         } else {
@@ -126,6 +175,10 @@ const NavbarDB = () => {
       } else {
         showNotification("No wallets found. Please install a wallet.", "error");
       }
+      }else{
+        showNotification("Please login before connecting wallet!","error")
+      }
+
     } catch (error) {
       console.error("Failed to connect wallet:", error);
       showNotification(`Failed to connect wallet: ${error.message}`, "error");
@@ -133,9 +186,9 @@ const NavbarDB = () => {
       setIsConnecting(false);
     }
   };
-
   const initializeUserAccount = async () => {
     try {
+      setIsLoading(true);
       console.log("Initializing user account...");
   
       const program = getProgram(wallets[0]?.adapter); // Ensure correct wallet adapter is passed
@@ -154,7 +207,7 @@ const NavbarDB = () => {
       console.log("Derived user account:", userPda.toBase58());
   
       const accountInfo = await program.provider.connection.getAccountInfo(userPda);
-  
+
       if (!accountInfo) {
         console.log("User account not found, initializing...");
         // Initialize the user account only if it doesn't exist
@@ -171,9 +224,9 @@ const NavbarDB = () => {
         console.log("User account initialized successfully.");
         setIsUserInitialized(true); // Set the user as initialized
       } else {
-        console.log("User account already exists.");
         setIsUserInitialized(true); // Set the user as initialized
-        
+        console.log("User account already exists.");
+        // mtlb logic lga to skte h pr complex hota jaega aise sun ek sec
         // Fetch the user account data
         const userAccount = await program.account.user.fetch(userPda);
         console.log("User account data:", userAccount);
@@ -193,12 +246,15 @@ const NavbarDB = () => {
         "Failed to initialize user account. Please try again.",
         "error"
       );
+    }finally{
+      setIsLoading(false);
     }
   };
   
   
   const handleDisconnect = async () => {
     try {
+      setIsLoading(true);
       setWalletAction("disconnect"); // Set action to disconnect
       await disconnect();
       showNotification("Wallet disconnected successfully!", "success");
@@ -208,6 +264,8 @@ const NavbarDB = () => {
         "Failed to disconnect wallet. Please try again.",
         "error"
       );
+    }finally{
+      setIsLoading(false);
     }
   };
 
@@ -235,7 +293,6 @@ const NavbarDB = () => {
     const publicKeyStr = publicKey.toBase58();
     return `${publicKeyStr.slice(0, 3)}...${publicKeyStr.slice(-3)}`;
   };
-
   return (
     <nav className="bg-gray-900 text-white flex items-center justify-between px-8 py-2 fixed top-0 left-0 w-full z-50">
       {notification.visible && (
@@ -245,6 +302,7 @@ const NavbarDB = () => {
           onClose={closeNotification}
         />
       )}
+
 
       {/* Show login component when showLogin is true */}
       {showLogin && (
@@ -303,17 +361,27 @@ const NavbarDB = () => {
         />
       </div>
 
-      <div className="flex items-center space-x-4 flex-1 justify-center relative">
-        {isWalletLoading ? (
-          <span className="text-white">Loading...</span>
-        ) : !isLoggedIn ? (
-          <button
-            className="bg-primary text-black px-4 py-1 rounded-full hover:bg-secondary"
-            onClick={handleLogin}
-          >
-            Login
-          </button>
-        ) : !connected && !isConnecting ? (
+        <div className="flex items-center space-x-4 flex-1 justify-center relative">
+        {isLoggedIn ? (
+      <button
+        className="bg-primary text-black px-4 py-1 rounded-full hover:bg-secondary"
+        onClick={handleLogout}
+      >
+        Logout 
+
+      </button>
+): (<button
+className="bg-primary text-black px-4 py-1 rounded-full hover:bg-secondary"
+onClick={handleLogin}
+>
+  Login
+</button>)}
+    
+    {isWalletLoading ? (
+      <span className="text-white">Loading...</span>
+    ) : (
+      <>
+        {!connected && !isConnecting ? (
           <button
             className="bg-primary text-black px-4 py-1 rounded-full hover:bg-secondary"
             onClick={handleConnect}
@@ -385,9 +453,12 @@ const NavbarDB = () => {
         ) : (
           <span className="text-white">Connecting...</span>
         )}
-      </div>
-    </nav>
-  );
-};
+      </>
+    )}
+  </div>
 
-export default NavbarDB;
+      </nav>
+    );
+  };
+
+  export default NavbarDB;

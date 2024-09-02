@@ -6,8 +6,8 @@ const mockBackendRequest = (action, data) => {
   console.log(`Backend request made for: ${action}`, data);
   return new Promise((resolve) => setTimeout(resolve, 500));
 };
-
 const DetailsContentSection = ({ post, relevantPosts }) => {
+  console.log('Rendering DetailsContentSection with post:', post);
   if (!post) {
     return <p className="text-white">Post not found.</p>;
   }
