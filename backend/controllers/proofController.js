@@ -26,7 +26,6 @@ const requestProof = async (req, res) => {
     );
 
     const sessionData = await reclaimClient.buildProofRequest(providerIds[req.query.id], true, 'V2Linking');
-    reclaimClient.setRedirectUrl(`https://google.com`)
 
     // Add signature before proof generation to prevent phishing
     reclaimClient.setSignature(
@@ -38,14 +37,7 @@ const requestProof = async (req, res) => {
 
       res.status(200).send({requestUrl, statusUrl});
     // Start the session and await its completion
-    await reclaimClient.startSession({
-      onSuccessCallback: (proofs) => {
-        console.log(proofs)
-      },
-      onFailureCallback: (error) => {
-        console.error(error.message)
-      }
-    });
+
 
   } catch (error) {
     res.status(500).send(error.message);
