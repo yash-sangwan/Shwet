@@ -30,7 +30,7 @@ const FAQ = () => {
   const faqData = [
     {
       question: "What is exactly a Truth Chain?",
-      answer: "A Truth Chain is concept introduced by Reclaim Protocol and implemented by Shwet. It is a blockchain based network of data containing facts, figures, news, media, claims, etc. by different people, organization and famous personalities around the world with an attested proof of authentication which cannot be modified or unclaimed at anytime or by anyone including the autor and Shwet itself.",
+      answer: "A Truth Chain is concept introduced by Reclaim Protocol and implemented by Shwet. It is a blockchain based network of data containing facts, figures, news, media, claims, etc. by different people, organization and famous personalities around the world with an attested proof of authentication which cannot be modified or unclaimed at anytime or by anyone including the author and Shwet itself.",
     },
     {
       question: "How can I get started with submitting my own data?",
