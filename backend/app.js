@@ -12,7 +12,7 @@ require('dotenv').config();
 // Use CORS middleware
 app.use(cors({
     origin: 'https://shwet.vercel.app', // Specify the allowed origin (frontend's URL)
-    methods: 'GET,POST,PUT,DELETE',  // Specify allowed HTTP methods
+    methods: 'GET,POST,PUT,DELETE,OPTIONS',  // Specify allowed HTTP methods
     allowedHeaders: 'Content-Type,Authorization',  // Specify allowed headers
 }));
 
