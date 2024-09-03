@@ -23,7 +23,7 @@ const Features = () => {
           alt="Vector Decoration"
         />
         <p className="text-lg mb-8">
-          Shwet lets you take charge of your post, news, claims or whatever you bring to the public by attesting your data with your official identity proof.
+          Shwet lets you take charge of your post, news, claims or whatever you bring to the public using proof of authenctication by Reclaim Protocol.
         </p>
         {/* <button className="bg-primary text-black font-bold py-3 px-6 rounded-full">
           Explore Now
