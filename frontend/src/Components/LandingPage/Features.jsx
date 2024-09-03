@@ -15,7 +15,7 @@ const Features = () => {
       {/* Right Component */}
       <div className="text-white mt-10 md:mt-0 md:ml-10 max-w-md">
         <h2 className="text-5xl font-bold mb-6 font-museo">
-          Modern Concept <br /> and Clean
+          Take charge of what you share
         </h2>
         <img
           src={assets.vector1}
@@ -23,7 +23,7 @@ const Features = () => {
           alt="Vector Decoration"
         />
         <p className="text-lg mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend tellus risus nibh molestie lorem pellentesque est quam in.
+          Shwet lets you take charge of your post, news, claims or whatever you bring to the public by attesting your data with your official identity proof.
         </p>
         {/* <button className="bg-primary text-black font-bold py-3 px-6 rounded-full">
           Explore Now
