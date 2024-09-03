@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="flex items-center space-x-3">
         <div className="flex flex-col">
           <span className="font-bold text-xl">Shwet</span>
-          <span className="text-sm text-secondaryText">New Age Truth-Chain</span>
+          <span className="text-sm text-secondaryText">Powered by Reclaim Protocol</span>
         </div>
       </div>
 
