@@ -17,7 +17,7 @@ const RequestProof = ({ id, onProofGenerated }) => {
 
       const token = localStorage.getItem("jwtToken");
       const response = await fetch(
-        `http://localhost:5505/proof/request-proof?id=${id}`,
+        `https://shwet-backend.vercel.app/proof/request-proof?id=${id}`,
         {
           method: "GET",
           headers: {
