@@ -57,6 +57,3 @@ const protect = (req, res, next) => {
 };
 
 module.exports = {login, verifyLogin, protect};
-
-
-//del
