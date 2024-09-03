@@ -68,6 +68,3 @@ const callbackHandler = async (req, res) => {
 }
 
 module.exports = { requestProof, callbackHandler };
-
-
-//del
