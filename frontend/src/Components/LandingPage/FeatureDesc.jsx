@@ -14,9 +14,9 @@ const FeatureDesc = () => {
   return (
     <div className="flex justify-between items-center h-screen px-24 py-10 bg-primaryBg">
       <div className="text-white max-w-lg">
-        <h1 className="text-5xl font-bold mb-6">Create Post and share them without any fear</h1>
+        <h1 className="text-5xl font-bold mb-6">Create and share, without any fear</h1>
         <p className="text-lg mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend tellus risus nibh molestie lorem.
+          Shwet prevents unauthorized copyrights of your content, ensuring that every content of yours uniquely belongs to you!
         </p>
         <div className="flex gap-6">
           <button className="bg-primary text-black font-semibold py-3 px-6 rounded-lg" onClick={handleClick} >
