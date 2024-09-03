@@ -6,6 +6,3 @@ const router = express.Router();
 router.get('/request-proof', verifyLogin, requestProof);
 
 module.exports = router;
-
-//del
-
