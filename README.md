@@ -5,7 +5,7 @@
 **Shwet** is a blockchain-based network inspired by the concept of the **Truth Chain** introduced by Reclaim Protocol. The platform allows users to store and share data such as facts, figures, news, media, and claims from various sources, including individuals, organizations, and public figures. Each piece of information is accompanied by an attested proof of authentication that ensures its integrity. Once recorded, the data cannot be modified or retracted by anyone, including the author or Shwet itself.
 
 ### Shwet's Landing Page
-![Landing Page Screenshot 1](/src/assets/readme1.png)
+![Landing Page Screenshot 1](/frontend/src/assets/readme1.png)
 
 
 > The screenshot provide a glimpse of Shwet's intuitive and user-friendly interface.
