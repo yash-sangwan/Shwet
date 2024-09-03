@@ -42,7 +42,7 @@ const Login = ({ onClose }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:5505/auth/login', {
+      const response = await fetch('https://shwet-backend.vercel.app/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
