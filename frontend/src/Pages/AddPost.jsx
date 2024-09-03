@@ -158,11 +158,11 @@ const AddPost = () => {
     const words = text.trim().split(/\s+/);
     const wordCount = words.filter((word) => word !== "").length;
 
-    if (wordCount > 200) {
-      // Truncate text to 45 words
-      const truncatedText = words.slice(0, 200).join(" ");
+    if (wordCount > 100) {
+      // Truncate text to 100 words
+      const truncatedText = words.slice(0, 100).join(" ");
       editorRef.current.innerText = truncatedText;
-      setWordCount(200); // Update word count to 45
+      setWordCount(100); // Update word count to 100
     } else {
       setWordCount(wordCount);
     }
@@ -271,11 +271,11 @@ const AddPost = () => {
           ></div>
 
           <div className="text-sm flex justify-between text-gray-500 mt-2">
-            Word count: {wordCount} / 200
-            <p>
+            Word count: {wordCount} / 100
+{/*             <p>
               <b>Note</b>: Media size should be less than{" "}
               <b className="text-[12px]">200kb</b>.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="bg-gray-100 p-4 shadow rounded-md mb-4">
