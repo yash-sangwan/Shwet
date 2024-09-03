@@ -15,6 +15,17 @@ app.use(cors({
     methods: 'GET,POST,PUT,DELETE',  // Specify allowed HTTP methods
     allowedHeaders: 'Content-Type,Authorization',  // Specify allowed headers
 }));
+
+// Manually set headers
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://shwet.vercel.app');  // Manually set origin
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();  // Send OK for preflight requests
+    }
+    next();
+});
 // Handle preflight requests
 app.options('*', cors());
 
