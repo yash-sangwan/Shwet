@@ -15,12 +15,17 @@ import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import '@solana/wallet-adapter-react-ui/styles.css';
 import { BlogProvider } from "./Components/extra/BlogContext";
 import RequestProof from "./Components/Dashboard/WritePost/RequestProof";
+import { Buffer } from 'buffer';
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
   const endpoint = useMemo(() => `https://api.devnet.solana.com`, []);
 
   const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
+
+  if (!window.Buffer) {
+  window.Buffer = Buffer;
+}
 
   return (
     <ConnectionProvider endpoint={endpoint}>
