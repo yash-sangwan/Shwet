@@ -1,4 +1,4 @@
-# Shwet - Verifiable truth-chain built on Solana
+# Shwet - Verifiable truth chain built on Solana
 
 ## Overview
 
