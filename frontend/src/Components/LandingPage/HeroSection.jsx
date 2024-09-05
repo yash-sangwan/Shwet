@@ -20,15 +20,12 @@ const HeroSection = () => {
         </p>
         <div className="flex gap-2 md:gap-4">
           <button
-            className="bg-primary text-primaryBg py-2 px-4 md:px-6 rounded font-semibold"
-            onClick={() =>
-              document
-                .getElementById("explore-section")
-                .scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Explore
-          </button>
+  className="bg-primary text-primaryBg py-2 px-4 md:px-6 rounded font-semibold"
+  onClick={() => window.open('https://youtu.be/MJnoen_rW4E', '_blank')}
+>
+  Explore
+</button>
+
 
           <button className="text-primaryText py-2 px-4 md:px-6 border border-white rounded font-semibold" 
            onClick={() =>
