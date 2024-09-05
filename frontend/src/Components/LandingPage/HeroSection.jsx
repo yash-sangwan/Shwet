@@ -23,7 +23,7 @@ const HeroSection = () => {
   className="bg-primary text-primaryBg py-2 px-4 md:px-6 rounded font-semibold"
   onClick={() => window.open('https://youtu.be/MJnoen_rW4E', '_blank')}
 >
-  Explore
+  Watch Video
 </button>
 
 
