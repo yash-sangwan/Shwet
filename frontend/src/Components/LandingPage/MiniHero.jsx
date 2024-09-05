@@ -41,7 +41,7 @@ const SecurityAndTransaction = () => {
             <h3 className=" font-museo text-2xl font-bold">Fast Transaction</h3>
           </div>
           <p className="text-secondaryText text-sm w-72">
-          Leveraging Solana’s high throughput, transactions on Shwet are processed quickly, making data storage and retrieval efficient.
+          Leveraging Solana’s high throughput fast transactions in Shwet's real-time data processing, time-sensitive data such as news, headlines submission & retrieval happens without any delay.
           </p>
         </div>
       </div>
